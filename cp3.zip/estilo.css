@@ -1,0 +1,139 @@
+@font-face {
+  font-family: 'h1';
+  src: url(../fonts/CastoroTitling-Regular.ttf);
+  font-weight: bold;
+} 
+
+@font-face {
+  font-family: 'h2';
+  src: url(../fonts/Satisfy-Regular.ttf);
+}
+
+h1 {
+  font-family: 'h1';
+  font-size: 100px;
+  font-style: italic;
+  color: aliceblue;
+}
+
+h2 {
+  font-family: 'h2';
+  font-size: 20px;
+  color: aliceblue;
+}
+
+body {
+  background-image: linear-gradient(to right, #41003f, rgb(44, 2, 74), rgb(53, 0, 52), rgb(66, 0, 71));
+  text-decoration-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+
+footer {
+  width: 100%;
+  height: 100px;
+  background-color: linear-gradient(to right, #000000, rgb(44, 2, 74), rgb(53, 0, 52), rgb(66, 0, 71));
+  text-align: center;
+  line-height: 160px;
+  padding: 10px;
+  font-size: 15px;
+  color: white;
+}
+
+#menu {
+  width: 100%;
+  height: 150px;
+  text-align: center;
+  color: white;
+}
+
+#menu ul li {
+  list-style: none;
+  display: inline;
+  padding: 5px;
+  color: white;
+}
+
+#menu ul li a {
+  font-family: Arial;
+  font-size: 20px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+#menu ul li a:hover {
+  background-color: rgb(18, 1, 41);
+  color: rgb(255, 254, 254);
+  padding: 4px;
+
+}
+
+.cor {
+  width: 30px;
+  height: 30px;
+  margin: 10px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.red {
+  background-color: red;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.green {
+  background-color: green;
+}
+.purple{
+  background-color: purple
+}
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+form#contato {
+  text-align: center;
+}
+
+form#contato input[type="text"],
+form#contato input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  text-align: center;
+}
+
+form#contato input[type="submit"] {
+  width: 100%;
+  max-width: 100px;
+  padding: 10px;
+  margin: 10px;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #459a45;
+  color: white;
+  cursor: pointer;
+}
+
+.contato {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

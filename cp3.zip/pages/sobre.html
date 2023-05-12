@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../estilo.css" type="text/css" rel="stylesheet" />
+    <title>Sobre</title>
+  </head>
+  <body>
+    <div class="container">
+      <nav id="menu">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../pages/contato.html">Contato</a></li>
+          <li><a href="../pages/quiz.html">Quiz</a></li>
+          <li><a href="../pages/sobre.html">Sobre</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <center>
+      
+  <h1>Nossa Empresa</h1>
+  <img id="image" src="" alt="slideshow image">    
+  <br />
+      <br />
+
+      <h2>
+        A Vinhacity foi fundada em 1985 por um grupo de amigos apaixonados por
+        vinhos. Eles compartilhavam o amor pela bebida e decidiram que queriam
+        trazer mais qualidade e variedade para o mercado brasileiro de vinhos.
+        No começo, a Vinhacity era apenas uma pequena loja de vinhos em um
+        bairro nobre de São Paulo. Mas logo os clientes começaram a reconhecer a
+        qualidade dos vinhos que a empresa importava e vendia, e a loja se
+        tornou um sucesso. Com o passar dos anos, a Vinhacity expandiu suas
+        operações e passou a importar vinhos de diversas regiões do mundo. Eles
+        também começaram a produzir seus próprios vinhos, utilizando uvas
+        cultivadas em sua própria vinícola no interior de São Paulo. Hoje, a
+        Vinhacity é uma das maiores empresas de vinhos do Brasil, com lojas em
+        diversas cidades do país e uma grande variedade de vinhos de alta
+        qualidade. A empresa também é conhecida por seus programas de degustação
+        e eventos especiais, que atraem amantes de vinhos de todo o país. Mas
+        mesmo com todo o sucesso, a Vinhacity mantém seu compromisso com a
+        qualidade e a paixão pela bebida que a tornaram famosa. Os fundadores
+        ainda trabalham na empresa e estão sempre em busca de novas formas de
+        inovar e surpreender seus clientes com vinhos excepcionais.
+      </h2>
+  
+    
+  
+    </center>
+
+    <footer>@2023-todos os direitos reservados</footer>
+    <script>
+      var image = ['image\1.png', 'image\2.png', 'image\3.png', 'image\4.png', 'image\5.png', 'image\6.png'];
+      var Index = 0;
+      var time = 20000;
+    
+      function slideShow() {
+        document.getElementById('image').src = image[Index];
+        Index++;
+        if (Index == image.length) {
+          Index = 0;
+        }
+        setTimeout("slideShow()", time);
+      }
+      slideShow();
+    </script>
+    </body>
+  </html>

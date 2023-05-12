@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="../estilo.css" type="text/css" rel="stylesheet" />
+  <title>Quiz</title>
+</head>
+
+<body>
+  <div class="container">
+    <nav id="menu">
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../pages/contato.html">Contato</a></li>
+        <li><a href="../pages/quiz.html">Quiz</a></li>
+        <li><a href="../pages/sobre.html">Sobre</a></li>
+      </ul>
+    </nav>
+  </div>
+  <script>
+    alert("Agora vamos conhecer sobre vinhos! Selecionamos 3 Perguntas que irá abordar Curiosidades sobre os vinhos, mas lembre-se!")
+    alert(
+      "Antes de começar, para que sua resposta seja válida, digite a alternativa correta, escrevendo ela respectivamente"
+      )
+
+
+
+    const quiz = [
+        
+      {
+        pergunta: "Qual é a uva mais utilizada na produção de vinhos do Rioja?",
+        alternativas: ["Tempranillo", "Pinot Noir", "Cabernet Sauvignon"],
+        respostaCorreta: "Tempranillo"
+      },
+      {
+        pergunta: "Qual é a diferença entre um vinho de guarda e um vinho de consumo imediato?",
+        alternativas: ["A qualidade da uva utilizada na produção", "O tempo de envelhecimento em barris de carvalho",
+          "O tempo de envelhecimento em garrafa"
+        ],
+        respostaCorreta: "O tempo de envelhecimento em garrafa"
+      },
+      {
+        pergunta: "Qual é a uva mais utilizada na produção de vinhos rosés?",
+        alternativas: ["Pinot Noir", " Syrah", "Grenache"],
+        respostaCorreta: "Grenache"
+      }
+    
+    ];
+
+    let respostas = [];
+    let pontuacao = 0;
+
+    function exibirPergunta(indice) {
+      const perguntaAtual = quiz[indice];
+      const pergunta = perguntaAtual.pergunta;
+      const alternativas = perguntaAtual.alternativas;
+
+      let mensagem = `${pergunta}\n`;
+
+      for (let i = 0; i < alternativas.length; i++) {
+        mensagem += `${i + 1}) ${alternativas[i]}\n`;
+      }
+
+      const respostaIndex = prompt(mensagem) - 1;
+      const resposta = alternativas[respostaIndex];
+      respostas.push(resposta);
+    }
+
+    function verificarResposta(indice) {
+      const resposta = respostas[indice];
+      const perguntaAtual = quiz[indice];
+      const respostaCorreta = perguntaAtual.respostaCorreta;
+
+      if (resposta === respostaCorreta) {
+        console.log("✔️");
+        pontuacao++;
+      } else {
+        console.log("❌");
+      }
+    }
+
+    for (let i = 0; i < quiz.length; i++) {
+      exibirPergunta(i);
+      verificarResposta(i);
+    }
+
+    const divQuiz = document.createElement("div");
+
+    divQuiz.innerHTML = `
+          <h1>Resultado do Quiz 📋</h1>
+          <p>Você acertou ${pontuacao} de ${quiz.length} perguntas.</p>
+          <ul>
+        `;
+
+    for (let i = 0; i < quiz.length; i++) {
+      const perguntaAtual = quiz[i];
+      const respostaCorreta = perguntaAtual.respostaCorreta;
+
+      if (respostaCorreta === respostas[i]) {
+        divQuiz.innerHTML += `<li>Você 𝘼𝙘𝙚𝙧𝙩𝙤𝙪 a pergunta ${i + 1} ✔️</li>`;
+      } else {
+        divQuiz.innerHTML += `<li>Você Errou a pergunta ${i + 1} ❌  A resposta 𝘾𝙤𝙧𝙧𝙚𝙩𝙖 era: ${respostaCorreta}.</li>`;
+      }
+    }
+
+    divQuiz.innerHTML += "</ul>";
+
+    document.body.appendChild(divQuiz);
+  </script>
+
+
+</body>
+
+</html>
